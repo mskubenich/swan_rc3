@@ -3,7 +3,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: secret
+  password: "!@#$%^&*(egor"
 
 development:
   <<: *default
@@ -16,5 +16,4 @@ test:
 production:
   <<: *default
   database: swan_rc3_production
-  username: root
-  password: wolverine
+
