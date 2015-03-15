@@ -12,3 +12,6 @@
 !/log/.keep
 /tmp
 .idea/
+
+# Ignore some directory SimpleCov
+coverage/
