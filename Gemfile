@@ -44,4 +44,6 @@ group :development, :test do
 
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl'
+  gem 'haml-rails', '~> 0.9.0'
+  gem 'html2haml'
 end
