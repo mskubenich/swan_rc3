@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PostTest < ActiveSupport::TestCase
+class ArticleTest < ActiveSupport::TestCase
 	 test "title, body can't be blank" do
 	  post = Post.new
 	  assert_not post.valid?
