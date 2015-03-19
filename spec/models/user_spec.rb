@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'spec_helper'
 
 describe User do
   before { @user = User.new(email: "user@example.com") }
@@ -8,6 +9,15 @@ describe User do
   it { should respond_to(:email) }
 
   it { should be_valid }
+
+  describe "when email address is already taken" do
+    before do
+      user_with_same_email = @user.dup
+      user_with_same_email.save
+    end
+
+    it { should_not be_valid }
+  end
 
   describe "when email is not present" do
     before { @user.email = " " }
