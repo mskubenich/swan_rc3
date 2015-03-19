@@ -3,11 +3,11 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: secret
+  password: '1234567'
 
 development:
   <<: *default
-  database: swan_rc3_development
+  database: swan_rc3
 
 test:
   <<: *default
