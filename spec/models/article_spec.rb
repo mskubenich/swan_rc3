@@ -1,5 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Article, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  	post = Article.new
+	assert_not post.valid?
+	assert_equal [:title, :body], post.errors.keys
 end
