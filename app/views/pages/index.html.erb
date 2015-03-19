@@ -1,17 +1,16 @@
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 <!-- Navigation -->
 <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-        <i class="fa fa-bars"></i>
-      </button>
-
-      <a class="navbar-brand page-scroll" href="#">
-        <i class="fa fa-play-circle"></i>  <span class="light">UZHGOROD </span> WEB PORTAL
-      </a>
+        <%= link_to image_tag("bubbles-alt-icon.png", alt: "Rails"), 'http://rubyonrails.org/' %>
     </div>
+    <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
@@ -62,37 +61,48 @@
 
 <!-- About Section -->
 
+<div class='container'>
+  <h1>Menu</h1>
+  <div class='navbar navbar-inverse'>
+    <div class='navbar-inner nav-collapse' style="height: auto;">
+      <ul class="nav">
+        <li class="active"><a  class="button7" href="#">Home</a></li>
+        <li><a href="#" >Page One</a></li>
+        <li><a href="#">Page Two</a></li>
+      </ul>
+    </div>
+  </div>
+
+    <div class='span8 main'>
+      <h2>Main Content Section</h2>
+      <p>Web development that doesn’t hurt
+      Ruby on Rails® is an open-source web framework that’s optimized
+      for programmer happiness and sustainable productivity. It lets you
+      write beautiful code by favoring convention over configuration.</p>
+      <p>“Ruby on Rails is a breakthrough in lowering the barriers of entry to programming.
+        Powerful web applications that formerly might have taken weeks or months
+        to develop can be produced in a matter of days.”
+        – Tim O’Reilly, Founder of O’Reilly Media</p></div>
+    <div class='span2 sidebar'>
+      <h3>Sidebar</h3>
+      <ul class="nav nav-tabs nav-stacked">
+        <li><a href='#'>Another Link 1</a></li>
+        <li><a href='#'>Another Link 2</a></li>
+        <li><a href='#'>Another Link 3</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<p>
 <div class="c" >
-  <p>
-<h1>
-  news
-</h1>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+</div>
 </p>
-</div>
+
+
 <!-- Sidebar -->
-<div class="col-sm-4">
-  <div class="panel panel-default">
-    <div class="panel-heading"><h3><a href="#">new</h3></a></div>
-    <div class="panel-body"><a href="#"><%= link_to image_tag("4.png", alt: "Rails"), 'http://rubyonrails.org/' %></a></div>
-    <div class="panel-footer"><strong>Web development that doesn’t hurt</strong></div>
-  </div>
-</div>
 
-<div class="col-sm-4">
-  <div class="panel panel-default">
-    <div class="panel-heading"><h3><a href="#">new</h3></a></div>
-    <div class="panel-body"><a href="#"><%= link_to image_tag("4.png", alt: "Rails"), 'http://rubyonrails.org/' %></a></div>
-    <div class="panel-footer"><strong>Web development that doesn’t hurt</strong></div>
-  </div>
-</div>
-
-<div class="col-sm-4">
-  <div class="panel panel-default">
-    <div class="panel-heading"><h3><a href="#">new</h3></a></div>
-    <div class="panel-body"><a href="#"><%= link_to image_tag("4.png", alt: "Rails"), 'http://rubyonrails.org/' %></a></div>
-    <div class="panel-footer"><strong>Web development that doesn’t hurt</strong></div>
-  </div>
-</div>
 
 
 
@@ -100,7 +110,7 @@
 
 <!-- Download Section -->
 
-<section id="download" class="content-section text-center">
+<div class="c" >
   <div class="download-section">
     <div class="container">
       <div class="col-lg-8 col-lg-offset-2">
@@ -110,7 +120,7 @@
       </div>
     </div>
   </div>
-</section>
+</div>
 
 <!-- Contact Section -->
 
