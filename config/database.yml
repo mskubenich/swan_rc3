@@ -1,18 +1,15 @@
 default: &default
-  adapter: mysql2
-  encoding: utf8
-  pool: 5
-  username: root
-  password: '1234567'
-
+adapter: mysql2
+encoding: utf8
+pool: 5
+username: root
+password: secret
 development:
-  <<: *default
-  database: swan_rc3
-
+<<: *default
+database: swan_rc3_development
 test:
-  <<: *default
-  database: swan_rc3_test
-
+<<: *default
+database: swan_rc3_test
 production:
-  <<: *default
-  database: swan_rc3_production
+<<: *default
+database: swan_rc3_production
