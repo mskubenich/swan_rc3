@@ -19,4 +19,5 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl'
+  gem 'haml-rails', '~> 0.9.0'
 end
