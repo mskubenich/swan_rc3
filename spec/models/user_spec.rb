@@ -9,6 +9,6 @@ describe User do
  expect(user.news.count).to eq (0)   
 user.news = [news]
 user.save
-
+ 
 expect(user.news.count).to eq (1)
 end
