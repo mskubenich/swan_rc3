@@ -1,0 +1,4 @@
+<%= @user.full_name %>, <%= @user.email %>
+<% if logged_in? %>
+    <%= link_to "Log out", logout_path, method: "delete" %>
+<% end %>
