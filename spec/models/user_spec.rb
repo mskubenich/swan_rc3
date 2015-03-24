@@ -2,7 +2,8 @@ require 'rails_helper'
 require 'spec_helper'
 
 describe User do
-  before { @user = User.new(email: "user@example.com") }
+  before { @user = User.new(first_nale: "Example", last_name: "User", full_name: "Example User",
+                            email: "user@example.com", password: "secret") }
 
   subject { @user }
 
@@ -33,13 +34,13 @@ describe User do
     end
   end
 
-describe "when email format is valid" do
-  it "should be valid" do
-    addresses = %w[user@foo.COM A_US-ER@f.b.org frst.lst@foo.jp a+b@baz.cn]
-    addresses.each do |valid_address|
-      @user.email = valid_address
-      expect(@user).to be_valid
+  describe "when email format is valid" do
+    it "should be valid" do
+      addresses = %w[user@foo.COM A_US-ER@f.b.org frst.lst@foo.jp a+b@baz.cn]
+      addresses.each do |valid_address|
+        @user.email = valid_address
+        expect(@user).to be_valid
+      end
     end
   end
-end
 end
