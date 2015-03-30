@@ -3,3 +3,5 @@ User.create!(first_nale: "Example",
 			 full_name: "Example User",
              email: "user@example.com",
              password: "secret")
+Role.create!(name:"admin")
+Role.create!(name:"user")
