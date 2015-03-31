@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'spec_helper'
 
 describe User do
-  before { @user = User.new(first_nale: "Example", last_name: "User", full_name: "Example User",
+  before { @user = User.new(first_name: "Example", last_name: "User", full_name: "Example User",
                             email: "user@example.com", password: "secret") }
 
   subject { @user }
@@ -10,6 +10,37 @@ describe User do
   it { should respond_to(:email) }
 
   it { should be_valid }
+
+  describe "when first_name is not present" do
+    before { @user.first_name = " " }
+    it { should_not be_valid }
+    end
+
+  describe "when first_name is too long" do
+    before { @user.first_name = "a" * 26 }
+    it { should_not be_valid }
+  end
+
+    describe "when last_name is not present" do
+    before { @user.last_name = " " }
+    it { should_not be_valid }
+    end
+
+  describe "when last_name is too long" do
+    before { @user.last_name = "a" * 26 }
+    it { should_not be_valid }
+  end
+
+    describe "when full_name is not present" do
+    before { @user.full_name = " " }
+    it { should_not be_valid }
+    end
+
+  describe "when full_name is too long" do
+    before { @user.full_name = "a" * 51 }
+    it { should_not be_valid }
+  end
+
 
   describe "when email address is already taken" do
     before do
