@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions
-
+  resources :news
   get '/admin', to: 'admin/pages#index'
-
+  get '/admin/news', to: 'admin/pages#news'
 end

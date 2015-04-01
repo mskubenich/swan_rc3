@@ -1,0 +1,42 @@
+=form_for News.new() do |n|
+  =n.label :title
+  =n.text_field :title
+
+  =n.label :body
+  =n.text_area :body
+
+  =n.submit
+%table.table.table-bordered{'data-align' => 'center'}
+  %thead
+    %tr
+      %th ID
+      %th Title
+      %th Body
+      %th Created_at
+      %th Updated_at
+      %th{colspan: 3} Actions
+  %tbody
+    -News.all.each do |n|
+      %tr
+        %td
+          =n.id
+        %td
+          =n.title
+        %td{'data-width' => '300'}
+          -if n.body.length < 79
+            =n.body
+          -else
+            =n.body.first(80)
+            =link_to ' ...',(news_path(n))
+        %td
+          =n.created_at.strftime("%y.%m.%d")
+        %td
+          =n.updated_at.strftime("%y.%m.%d")
+        %td
+          =link_to 'Show', n
+        %td
+          =link_to 'Edit', edit_news_path(n)
+        %td
+          =link_to 'Delete',n,method: :delete
+
+
