@@ -22,4 +22,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara', '2.4.4'
   gem 'haml-rails', '~> 0.9.0'
+  gem 'cucumber-rails', '1.4.0', :require => false
+  gem 'database_cleaner', github: 'bmabey/database_cleaner'
 end
+
