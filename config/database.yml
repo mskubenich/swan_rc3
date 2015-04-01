@@ -9,10 +9,12 @@ development:
   <<: *default
   database: swan_rc3_development
 
-test:
+test: &test
   <<: *default
   database: swan_rc3_test
 
 production:
   <<: *default
   database: swan_rc3_production
+cucumber:
+  <<: *test
