@@ -1,16 +1,27 @@
 require 'rails_helper'
 
 describe News do
-  before { @news = News.new(body: 'Example',title: 'Example Example') }
+  it 'should not be valid if body n body is blank' do
+    news = build :news, body: '', title: ''
+    news.validate
 
-  subject { @news }
+    expect(news.valid?).to eq(false)
+    expect(news.errors[:body]).to eq(["can't be blank"])
+    expect(news.errors[:title]).to eq(["can't be blank", "is too short (minimum is 15 characters)"])
+  end
 
-  describe 'when body and title is valid' do
-    it 'should be valid' do
-      expect(@news.title.length).to be >= 15
-      expect(@news.title).not_to be_blank
-      expect(@news.body).not_to be_blank
-      expect(@news).to be_valid
-    end
+  it 'should not be valid if title length is less then 15' do
+    news = build :news, body: 'test', title: 'test'
+    news.validate
+
+    expect(news.valid?).to eq(false)
+    expect(news.errors[:title]).to eq(["is too short (minimum is 15 characters)"])
+  end
+
+  it 'should be valid' do
+    news = build :news, title: 'The best ever title!!!', body: 'Test body.'
+    news.validate
+
+    expect(news.valid?).to eq(true)
   end
 end
