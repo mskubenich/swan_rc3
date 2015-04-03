@@ -10,6 +10,54 @@ describe User do
     expect(user2.errors[:email]).to eq(["has already been taken"])
 
   end
+  it 'should not be valid when first name is not present' do
+    user = build :user, first_name: ''
+    user.validate
+
+    expect(user.valid?).to eq(false)
+    expect(user.errors[:first_name]).to eq(["can't be blank"])
+  end
+
+
+  it 'should not be valid when first name is too long' do
+    user = build :user, first_name: 'a' * 26
+    user.validate
+
+    expect(user.valid?).to eq(false)
+    expect(user.errors[:first_name]).to eq(["is too long (maximum is 25 characters)"])
+  end
+
+  it 'should not be valid when last name is not present' do
+    user = build :user, last_name: ''
+    user.validate
+
+    expect(user.valid?).to eq(false)
+    expect(user.errors[:last_name]).to eq(["can't be blank"])
+  end
+
+  it 'should not be valid when last name is too long' do
+    user = build :user, last_name: 'a' * 26
+    user.validate
+
+    expect(user.valid?).to eq(false)
+    expect(user.errors[:last_name]).to eq(["is too long (maximum is 25 characters)"])
+  end
+
+  it 'should not be valid when full name is not present' do
+    user = build :user, full_name: ''
+    user.validate
+
+    expect(user.valid?).to eq(false)
+    expect(user.errors[:full_name]).to eq(["can't be blank"])
+  end
+
+  it 'should not be valid when full name is too long' do
+    user = build :user, full_name: 'a' * 51
+    user.validate
+
+    expect(user.valid?).to eq(false)
+    expect(user.errors[:full_name]).to eq(["is too long (maximum is 50 characters)"])
+  end
 
   it 'should not be valid when email is not present' do
     user = build :user, email: ''
