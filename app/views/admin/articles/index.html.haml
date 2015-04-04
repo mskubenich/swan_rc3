@@ -1,0 +1,18 @@
+%h2{:align => "center"} Listing Articles
+%p= link_to 'New article', new_admin_article_path
+%table{:border => "2", :cellpadding => "7", :width => "100%"}
+  %tr
+    %th Title
+    %th Text
+    %th{:colspan => "2"}
+  - @articles.each do |article|
+    %tr
+      %td= article.title
+      %td= truncate(article.text, length: 140)
+      %td
+        %p= link_to 'Show', admin_article_path(article)
+        %p= link_to 'Edit', edit_admin_article_path(article)
+        %p= link_to 'Destroy', admin_article_path(article),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }
+=will_paginate

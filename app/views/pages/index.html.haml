@@ -1,3 +1,113 @@
-%h1
-  Welcome to the Uzhgorod web portal.
-%p In future this can be awesome web application. Now we in development. Thanks for visit.
+/ Navigation
+%nav.navbar.navbar-custom.navbar-fixed-top{:role => "navigation"}
+  .container
+    .navbar-header
+      = link_to image_tag("bubbles-alt-icon.png", alt: "Rails"), 'http://rubyonrails.org/'
+    %form.navbar-form.navbar-left{:role => "search"}
+      .form-group
+        %input.form-control{:placeholder => "Search", :type => "text"}/
+      %button.btn.btn-default{:type => "submit"} Submit
+    / Collect the nav links, forms, and other content for toggling
+    .collapse.navbar-collapse.navbar-right.navbar-main-collapse
+      %ul.nav.navbar-nav
+        / Hidden li included to remove active class from about link when scrolled up past about section
+        %li.hidden
+          %a{:href => "#page-top"}
+        %li
+          %a.button7{:href => "#"} button
+        %li
+          %a.button7{:href => "#"} button
+        %li
+          %a.button7{:href => "#"} button
+        %li
+          %a.button7{:href => "#"} button
+        %li
+          %a.button7{:href => "#"} button
+  / /.navbar-collapse
+  / /.container
+/ Intro Header
+%header.intro
+  .intro-body
+    .container
+      .row
+        .col-md-8.col-md-offset-2
+          %h2 Welcome to the Uzhgorod web portal.
+          %p.intro-text
+            In future this can be awesome web application. Now we in development.
+            = succeed "Thanks" do
+              %br/
+          %a.btn.btn-default.btn-lg{:href => "#"} Sing up
+          %i.fa.fa-angle-double-down.animated
+/ About Section
+.container
+  %h1 Menu
+  .navbar.navbar-inverse
+    .navbar-inner.nav-collapse{:style => "height: auto;"}
+      %ul.nav
+        %li.active
+          %a.button7{:href => "#"} Home
+        %li
+          %a{:href => "#"} Page One
+        %li
+          %a{:href => "#"} Page Two
+  .span8.main
+    %h2 Main Content Section
+    %p
+      Web development that doesn’t hurt
+      Ruby on Rails® is an open-source web framework that’s optimized
+      for programmer happiness and sustainable productivity. It lets you
+      write beautiful code by favoring convention over configuration.
+    %p
+      “Ruby on Rails is a breakthrough in lowering the barriers of entry to programming.
+      Powerful web applications that formerly might have taken weeks or months
+      to develop can be produced in a matter of days.”
+      – Tim O’Reilly, Founder of O’Reilly Media
+  .span2.sidebar
+    %h3 Sidebar
+    %ul.nav.nav-tabs.nav-stacked
+      %li
+        %a{:href => "#"} Another Link 1
+      %li
+        %a{:href => "#"} Another Link 2
+      %li
+        %a{:href => "#"} Another Link 3
+%p
+.c
+  %p
+    %a.btn.btn-primary.btn-lg{:href => "#", :role => "button"} Learn more
+/ Sidebar
+/ /#sidebar-wrapper
+/ Download Section
+.c
+  .download-section
+    .container
+      .col-lg-8.col-lg-offset-2
+        %h1 The best web portal
+        %p You can try for free!
+        %a.btn.btn-default.btn-lg{:href => "#"} Visit our Web portal
+/ Contact Section
+.c
+  %h1 We in
+  %p add
+  %ul.list-inline.banner-social-buttons
+    %li
+      %a.btn.btn-default.btn-lg{:href => "#"}
+        %i.fa.fa-twitter.fa-fw
+        %span.network-name Twitter
+    %li
+      %a.btn.btn-default.btn-lg{:href => "#"}
+        %i.fa.fa-github.fa-fw
+        %span.network-name Facebook
+    %li
+      %a.btn.btn-default.btn-lg{:href => "#"}
+        %i.fa.fa-google-plus.fa-fw
+        %span.network-name Google+
+/ Map Section
+/ Footer
+%footer
+  .container.text-center
+    %p Copyright © Website 2015
+    %p
+      %a{:href => "admin"} Admin
+    %div
+      %p= link_to image_tag("4.png", alt: "Rails"), 'http://rubyonrails.org/'
