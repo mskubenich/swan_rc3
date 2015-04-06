@@ -5,4 +5,9 @@ class User < ActiveRecord::Base
   has_secure_password
 
   validates :password, length: { minimum: 6 }
+
+  has_attached_file :avatar, :styles => {:large => "500x500>", :thumb => "100x100>"}, :default_url => '../../public/assets/user_avatars/default_avatar.png'
++ validates_attachment :avatar,
++ :content_type => { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] } ,
++ :size => {:in => 0..1.megabytes}
 end
