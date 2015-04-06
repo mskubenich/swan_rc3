@@ -1,4 +1,5 @@
 %h1{:align => "center", :style => "color:#538cf5"} Hello Admin
+<<<<<<< HEAD
 
 %h2 Users list
 
@@ -9,3 +10,6 @@
         %td
           = link_to user.full_name, user
           %td= link_to "Delete", user, method: :delete, data: { confirm: "Are you sure?" }
+=======
+%p= link_to 'Articles', admin_articles_path
+>>>>>>> feature/CRUD_for_articles_on_Admin

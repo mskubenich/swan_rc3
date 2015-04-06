@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
 
+  namespace :admin do
+    resources :articles
+  end
+
   get '/admin', to: 'admin/pages#index'
 
 end
