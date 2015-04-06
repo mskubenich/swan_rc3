@@ -139,13 +139,24 @@ describe User do
 	it "should have many news" do
 	news = create :news
 	user = create :user
-	end
 
 	expect(user.news.count).to eq (0)
 	user.news = [news]
 	user.save
 
 	expect(user.news.count).to eq (1)
-	end
+  end
+
+  it 'should have many roles' do
+    role = create :role
+    user = create :user
+
+    user.roles << role
+    user.save
+    user.reload
+
+    expect(user.roles.count).to eq(1)
+    expect(user.roles.first.id).to eq(role.id)
+  end
 end
 
