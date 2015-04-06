@@ -87,5 +87,17 @@ describe User do
     user = create :user, password: 'secret', password_confirmation: 'secret'
     expect(user.authenticate('secret1')).to eq(false)
   end
+
+	it "should have many news" do
+	news = create :news
+	user = create :user
+	end
+
+	expect(user.news.count).to eq (0)
+	user.news = [news]
+	user.save
+
+	expect(user.news.count).to eq (1)
+	end
 end
 
