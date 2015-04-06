@@ -147,5 +147,17 @@ describe User do
 
 	expect(user.news.count).to eq (1)
 	end
+
+  it "should have many article" do
+  article = create :article
+  user = create :user
+  end
+
+  expect(user.article.count).to eq (0)
+  user.article = [article]
+  user.save
+
+  expect(user.article.count).to eq (1)
+  end
 end
 
