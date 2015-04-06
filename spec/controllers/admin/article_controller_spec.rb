@@ -3,14 +3,6 @@ describe Admin::ArticlesController do
   let(:article) do
     create(:article, title: 'Example article title', text: 'Example title text')
   end
-  describe "GET index" do
-    it "assigns all articles as @articles" do
-      get :index
-      puts assigns(:articles).inspect
-      assigns(:articles).should_not be_empty
-      assigns(:articles).first.should be_a_kind_of(Article)
-    end
-  end
 
   describe 'GET #new' do
     it "assigns a new Article to @article" do

@@ -19,7 +19,7 @@ describe News do
   end
 
   it 'should be valid' do
-    news = build :news, title: 'The best ever title!!!', body: 'Test body.'
+    news = build :news, title: 'The best ever title!!!', body: 'Test body.', author_id: 1
     news.validate
 
     expect(news.valid?).to eq(true)
