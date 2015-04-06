@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml-rails', '~> 0.9.0'
 gem 'bcrypt', '3.1.7'
 
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
@@ -22,4 +23,5 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara', '2.4.4'
   gem 'database_cleaner', '1.4.1'
+  gem "rails_best_practices"
 end
