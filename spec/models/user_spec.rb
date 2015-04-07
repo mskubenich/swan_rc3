@@ -146,7 +146,7 @@ describe User do
   end
 
   it 'should have many roles' do
-    role = create :role
+    role = FactoryGirl.create :role
     user = create :user
 
     user.roles << role
