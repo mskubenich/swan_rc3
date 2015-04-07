@@ -144,5 +144,17 @@ describe User do
 
     expect(user.news.count).to eq (1)
   end
+
+  it 'should have many roles' do
+    role = create :role
+    user = create :user
+
+    user.roles << role
+    user.save
+    user.reload
+
+    expect(user.roles.count).to eq(1)
+    expect(user.roles.first.id).to eq(role.id)
+  end
 end
 
