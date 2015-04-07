@@ -1,6 +1,9 @@
 require 'rails_helper'
 describe 'CRUD actions' do
-  before {@news = News.create(title: 'Example Example',body: 'Example body')}
+  before do
+    @user = create :user
+    @news = News.create(title: 'Example Example',body: 'Example body', author: @user)
+  end
 
   it 'should have link_to news index from admin_page' do
     visit 'admin'
