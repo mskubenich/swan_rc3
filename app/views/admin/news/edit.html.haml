@@ -1,0 +1,22 @@
+%h1{align: 'center'}Edit news
+=form_for :news, url: admin_news_path, method: :patch do |f|
+  -if @news.errors.any?
+    #error_explanation
+      %h2
+        =pluralize(@news.errors.count, "error")
+        prohibited
+        this news from being saved:
+      %ul
+        -@news.errors.full_messages.each do |msg|
+          %li
+            =msg
+
+  =f.label :title
+  =f.text_field :title
+
+  =f.label :body
+  =f.text_area :body
+
+  =f.submit
+
+=link_to 'Back',admin_news_index_path
