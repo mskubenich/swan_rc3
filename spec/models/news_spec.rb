@@ -9,6 +9,14 @@ describe News do
     expect(news.errors[:body]).to eq(["can't be blank"])
     expect(news.errors[:title]).to eq(["can't be blank", "is too short (minimum is 15 characters)"])
   end
+  it "should belongs to author" do
+	author = create :author
+	news = create :news
+	news.author = author
+	news.save
+
+	expect(news.author.id).to eq(author.id)
+	end
 
   it 'should not be valid if title length is less then 15' do
     news = build :news, body: 'test', title: 'test'
