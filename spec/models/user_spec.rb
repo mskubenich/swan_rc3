@@ -137,15 +137,12 @@ describe User do
   end
 
 	it "should have many news" do
-	news = create :news
-	user = create :user
-	end
+    user = create :user
+    news = create :news, title: 'Example'*5, author: user
 
-	expect(user.news.count).to eq (0)
-	user.news = [news]
-	user.save
+    user.save
 
-	expect(user.news.count).to eq (1)
-	end
+    expect(user.news.count).to eq (1)
+  end
 end
 
