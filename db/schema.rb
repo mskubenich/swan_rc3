@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150406182335) do
+=======
+ActiveRecord::Schema.define(version: 20150406194212) do
+>>>>>>> features/visit_model
 
   create_table "articles", force: :cascade do |t|
     t.string   "title",      limit: 255
@@ -49,6 +53,17 @@ ActiveRecord::Schema.define(version: 20150406182335) do
     t.string   "avatar_content_type", limit: 255
     t.integer  "avatar_file_size",    limit: 4
     t.datetime "avatar_updated_at"
+  end
+
+  create_table "visits", force: :cascade do |t|
+    t.string   "ip",              limit: 255
+    t.string   "browser",         limit: 255
+    t.string   "browser_version", limit: 255
+    t.string   "os_name",         limit: 255
+    t.string   "os_version",      limit: 255
+    t.string   "devise",          limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
 end
