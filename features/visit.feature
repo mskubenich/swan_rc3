@@ -1,3 +1,5 @@
+@javascript
+
 Feature: Visit page
 
   Scenario: Successful visit
