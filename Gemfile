@@ -26,4 +26,5 @@ group :development, :test do
   gem 'capybara', '2.4.4'
   gem 'database_cleaner', '1.4.1'
   gem "rails_best_practices"
+  gem 'cucumber-rails', :require => false
 end
