@@ -24,4 +24,13 @@ describe Article do
 
     expect(article.valid?).to eq(true)
   end
+
+  it "should belongs to author" do
+    author = create :user
+    articles = create :articles
+    articles.author = author
+    articles.save
+
+    expect(articles.author.id).to eq(author.id)
+  end
 end

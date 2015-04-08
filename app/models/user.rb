@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
 
   has_many :news, foreign_key: 'author_id'
 
+  has_many :articles, foreign_key: 'author_id'
+
   def user?
     self.roles.map{|r|r.name}.include?('user')
   end
