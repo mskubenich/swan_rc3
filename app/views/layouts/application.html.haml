@@ -3,8 +3,10 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title SwanRc3
+    = include_gon(:init => true)
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag 'jquery-1.4.2.min', 'rails', 'highcharts'
     = csrf_meta_tags
   %body
     - flash.each do |message_type, message|

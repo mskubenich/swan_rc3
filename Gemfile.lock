@@ -42,6 +42,7 @@ GEM
       execjs
       json
     bcrypt (3.1.7)
+    bcrypt (3.1.7-x86-mingw32)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.3)
@@ -56,7 +57,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    childprocess (0.5.5)
+    childprocess (0.5.6)
       ffi (~> 1.0, >= 1.0.11)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -70,7 +71,7 @@ GEM
     coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.9.1)
+    coffee-script-source (1.8.0)
     colored (1.2)
     columnize (0.9.0)
     cucumber (1.3.19)
@@ -97,10 +98,16 @@ GEM
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
     ffi (1.9.8)
+    ffi (1.9.8-x86-mingw32)
     gherkin (2.12.2)
       multi_json (~> 1.3)
-    globalid (0.3.3)
+    gherkin (2.12.2-x86-mingw32)
+      multi_json (~> 1.3)
+    globalid (0.3.5)
       activesupport (>= 4.1.0)
+    gon (5.0.4)
+      actionpack (>= 2.3.0)
+      json
     haml (4.0.6)
       tilt
     haml-rails (0.9.0)
@@ -109,6 +116,8 @@ GEM
       haml (>= 4.0.6, < 5.0)
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
+    highcharts-rails (3.0.10)
+      railties (>= 3.1)
     hike (1.2.3)
     html2haml (2.0.0)
       erubis (~> 2.7.0)
@@ -134,7 +143,10 @@ GEM
     multi_json (1.11.0)
     multi_test (0.1.2)
     mysql2 (0.3.18)
+    mysql2 (0.3.18-x86-mingw32)
     nokogiri (1.6.6.2)
+      mini_portile (~> 0.6.0)
+    nokogiri (1.6.6.2-x86-mingw32)
       mini_portile (~> 0.6.0)
     paperclip (4.2.1)
       activemodel (>= 3.0.0)
@@ -179,6 +191,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+      json (~> 1.4)
     require_all (1.3.2)
     rspec-core (3.2.3)
       rspec-support (~> 3.2.0)
@@ -256,6 +269,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86-mingw32
 
 DEPENDENCIES
   agent_orange (~> 0.1.6)
@@ -267,7 +281,9 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner (= 1.4.1)
   factory_girl_rails
+  gon (~> 5.0.0)
   haml-rails (~> 0.9.0)
+  highcharts-rails (~> 3.0.0)
   jbuilder (~> 2.0)
   jquery-rails
   mysql2

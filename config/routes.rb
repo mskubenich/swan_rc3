@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :articles
     resources :news
+    resources :statistics, only: [ :index ]
   end
 
   get '/admin', to: 'admin/pages#index'

@@ -10,12 +10,14 @@ class ApplicationController < ActionController::Base
     ua = AgentOrange::UserAgent.new(request.user_agent)
     browser = ua.device.engine.browser
     os = ua.device.operating_system
+    device_type = ua.device.type.capitalize
 
     Visit.create  ip: request.remote_ip,
                   browser: browser.name,
                   browser_version: browser.version.to_s,
                   os_name: os.name,
-                  os_version: os.version.to_s
+                  os_version: os.version.to_s,
+                  devise: device_type
 
   end
 
