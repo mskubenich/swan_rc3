@@ -1,3 +1,9 @@
-%h1{align: 'center'}
-  =@news.title
-=@news.body
+#articles_and_news_pages
+  %h3{:align => "center"}
+    = @news.title
+  %pre
+    Create at: #{@news.created_at.strftime("%d.%m.%Y at %H:%M")}           Author:
+  %div
+    = @news.body
+  %p
+    = link_to 'Back', 'javascript:history.back()', class: "btn btn-default"
