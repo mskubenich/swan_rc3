@@ -1,0 +1,46 @@
+.container
+  %h1
+    Sign Up
+
+
+  = form_for @user do |f|
+    %fieldset.form-group
+      = f.label :first_name
+      - if @user.errors[:first_name].any?
+        %span.label.label-danger
+          = @user.errors[:first_name].join(', ')
+      = f.text_field :first_name, value: @user.first_name, class: 'form-control'
+    %fieldset.form-group
+      = f.label :last_name
+      - if @user.errors[:last_name].any?
+        %span.label.label-danger
+          = @user.errors[:last_name].join(', ')
+      = f.text_field :last_name, value: @user.last_name, class: 'form-control'
+    %fieldset.form-group
+      = f.label :full_name
+      - if @user.errors[:full_name].any?
+        %span.label.label-danger
+          = @user.errors[:full_name].join(', ')
+      = f.text_field :full_name, value: @user.full_name, class: 'form-control'
+    %fieldset.form-group
+      = f.label :email
+      - if @user.errors[:email].any?
+        %span.label.label-danger
+          = @user.errors[:email].join(', ')
+      = f.text_field :email, value: @user.email, class: 'form-control'
+    %fieldset.form-group
+      = f.label :password
+      - if @user.errors[:password].any?
+        %span.label.label-danger
+          = @user.errors[:password].join(', ')
+      = f.text_field :password, value: @user.password, class: 'form-control'
+    %fieldset.form-group
+      = f.label :password_confirmation
+      - if @user.errors[:password_confirmation].any?
+        %span.label.label-danger
+          = @user.errors[:password_confirmation].join(', ')
+      = f.text_field :password_confirmation, value: @user.password_confirmation, class: 'form-control'
+    %br
+    = f.submit 'Enjoy !!!', class: 'btn btn-success'
+
+

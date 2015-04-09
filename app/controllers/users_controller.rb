@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = "Welcome to the Uzhhorod web portal!"
-      redirect_to @user
+      redirect_to root_path
     else
       render 'new'
     end
@@ -22,6 +22,6 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:first_nale, :last_name, :full_name, :email, :password)
+      params.require(:user).permit(:first_name, :last_name, :full_name, :email, :password, :password_confirmation)
     end
 end
