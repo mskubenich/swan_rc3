@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   private
 
   def create_visit
+    unless Rails.env.test?
     ua = AgentOrange::UserAgent.new(request.user_agent)
     browser = ua.device.engine.browser
     os = ua.device.operating_system
@@ -18,5 +19,5 @@ class ApplicationController < ActionController::Base
                   os_version: os.version.to_s
 
   end
-
+end
 end

@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true, length: { maximum: 25 }
   validates :full_name, presence: true, length: { maximum: 50 }
   validates :password, length: { minimum: 6 }
+  validates_confirmation_of :password
+  attr_accessor :password_confirmation
 
   has_secure_password
   has_and_belongs_to_many :roles

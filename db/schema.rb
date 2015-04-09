@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20150406182335) do
-=======
 ActiveRecord::Schema.define(version: 20150406194212) do
->>>>>>> features/visit_model
 
   create_table "articles", force: :cascade do |t|
     t.string   "title",      limit: 255
