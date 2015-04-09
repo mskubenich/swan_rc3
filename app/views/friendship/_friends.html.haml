@@ -1,0 +1,37 @@
+.friends
+  %table.table.table-bordered
+    %tr
+      %td.active
+        Your friends:
+        = @user.friends.count
+    - @user.friends.each do |friend|
+      %tr
+        %td
+          = link_to friend.full_name, friend
+          %br
+          = link_to 'Delete', { :controller => 'friendship', :action => 'delete',
+          :id => friend.id }, data: { confirm: 'Do you really want to delete friend?' }
+    - unless @user.requested_friends.empty?
+      %tr
+        %td.success
+          = pluralize(@user.requested_friends.count, 'requested friend')
+      - @user.requested_friends.each do |requester|
+        %tr
+          %td
+            = link_to requester.full_name, requester
+            %br
+            = link_to '(Accept', { :controller => 'friendship', :action => 'accept', :id => requester.id }
+            = ' | '
+            = link_to 'Decline)', { :controller => 'friendship', :action => 'decline',
+            :id => requester.id }, data: { confirm: 'Are you sure you want to decline friendship?' }
+    - unless @user.pending_friends.empty?
+      %tr
+        %td.info
+          = pluralize(@user.pending_friends.count, 'pending friend')
+      - @user.pending_friends.each do |pending_friends|
+        %tr
+          %td
+            = link_to pending_friends.full_name, pending_friends
+            %br
+            = link_to '(Cancel request)', { :controller => 'friendship', :action => 'cancel',
+            :id => pending_friends.id }, data: { confirm: 'Cancel friendship request?' }

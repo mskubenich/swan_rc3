@@ -1,5 +1,29 @@
 = @user.full_name
 = @user.email
 
+- if @user == current_user
+  = 'My Profile'
+
 - if logged_in?
-  = link_to "Log out", logout_path, method: "delete"
+  = link_to 'Log out', logout_path, method: 'delete'
+  %br
+
+- if @user != @logged_in_user and @user != @friend
+  - status = friendship_status(@user, @friend)
+  - unless @user == current_user || current_user.requested_friends.include?(@user) || current_user.friends.include?(@user) || current_user.pending_friends.include?(@user)
+    %br
+    = link_to 'Request friendship', { :controller => 'friendship', :action => 'create', :id => @user.id },
+    data: { confirm: 'Send friend request?' }, class: 'btn btn-primary'
+    %br
+  - if status
+    - case status
+      - when 'requested'
+        = @friend.full_name + ' would like to be your friend.'
+        %span
+          = link_to 'Request '+ @friend.full_name, friend_accept_path(id: @friend.id)
+      - when 'pending'
+        = 'You have requested friendship from ' + @friend.full_name
+      - when 'accepted'
+        = @friend.full_name + ' is your friend.'
+
+= render 'friendship/friends'

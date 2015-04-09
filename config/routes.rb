@@ -9,8 +9,18 @@ Rails.application.routes.draw do
 
   root :to => "pages#index"
 
-  resources :users
+  resources :users, only: [:create, :show, :index]
   resources :sessions
+  
+  resources :friendship, only: [:create, :accept, :decline, :cancel, :delete] do
+    collection do
+      get :create
+      get :accept
+      get :decline
+      get :cancel
+      get :delete
+    end
+  end
 
   namespace :admin do
     resources :articles
