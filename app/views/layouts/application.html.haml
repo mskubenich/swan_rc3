@@ -7,6 +7,21 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    %nav.header.navbar-inverse
+      .container-fluid
+        %div
+          %ul.nav.navbar-nav.pull-right
+            %li
+              = link_to "Home", root_path
+            - if !logged_in?
+              %li
+                = link_to "Sign in", login_path
+            - else
+              %li
+                = link_to "Profile", current_user
+              %li
+                = link_to "Sign out", logout_path, method: "delete"
     - flash.each do |message_type, message|
-      %div{:class => "alert alert-#{message_type}"}= message
+      %div{:class => "alert alert-#{message_type}"}
+        = message
     = yield
