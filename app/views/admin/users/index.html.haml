@@ -1,0 +1,25 @@
+%h1 Users list
+
+%ul.users
+  %table.table.table-bordered
+    %tr.info
+      %td
+        %b User ID
+      %td
+        %b User name
+      %td
+        %b User email
+    - @users.each do |user|
+      %tr
+        %td.active
+          = user.id
+        %td
+          = link_to user.full_name, admin_user_path(user)
+        %td
+          = mail_to user.email
+
+= will_paginate
+
+%br
+
+= link_to 'Back to Admin page', admin_path

@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     resources :articles
     resources :news
     resources :statistics, only: [ :index ]
+    resources :users, only: [:index, :show]
   end
 
   get '/admin', to: 'admin/pages#index'
