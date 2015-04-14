@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
+<<<<<<< HEAD
 
   before_filter :create_visit
 
@@ -21,4 +22,7 @@ class ApplicationController < ActionController::Base
 
   end
 
+=======
+  include FriendshipHelper
+>>>>>>> feature/friendship_relations
 end

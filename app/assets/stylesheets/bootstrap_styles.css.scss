@@ -2,7 +2,7 @@
 @import "bootstrap";
 
 h1 {
-	text-align: center;
+  text-align: center;
 }
 
 input, textarea, select, .uneditable-input {
@@ -19,4 +19,9 @@ input {
   padding-left: 20px;
   width: 35%;
   text-align: center;
+}
+
+.friends {
+  float: left;
+  width: 200px;
 }
