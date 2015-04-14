@@ -19,6 +19,7 @@ gem "paperclip", "~> 4.2"
 gem 'agent_orange', '~> 0.1.6'
 gem "highcharts-rails", "~> 3.0.0"
 gem 'gon', '~> 5.0.0'
+gem 'cancancan', '~> 1.10'
 
 group :development, :test do
   gem 'byebug'
