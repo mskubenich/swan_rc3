@@ -1,16 +1,7 @@
 %h1{:align => "center", :style => "color:#538cf5"} Hello Admin
-<<<<<<< HEAD
 
-%h2 Users list
-
-%ul.users
-  %table.table.table-bordered
-    - @users.each do |user|
-      %tr
-        %td
-          = link_to user.full_name, user
-          %td= link_to "Delete", user, method: :delete, data: { confirm: "Are you sure?" }
-=======
 %p= link_to 'Articles', admin_articles_path
->>>>>>> feature/CRUD_for_articles_on_Admin
+
 %p= link_to 'News', admin_news_index_path
+
+%p= link_to 'Users', admin_users_path
