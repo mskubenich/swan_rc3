@@ -1,0 +1,42 @@
+- if @news[:id].to_s.empty?
+  = form_for :news, url: admin_news_index_path do |f|
+    %div.form-group
+      %p
+        = f.label :title
+        - if @news.errors[:title].any?
+          - @news.errors[:title].each do |e|
+            .label.label-danger{ :style=>"margin-left:2px" }
+              =e
+        = f.text_field :title, :class => "form-control", :style=>"position: relative"
+    %div.form-group
+      %p
+        = f.label :body
+        - if @news.errors[:body].any?
+          - @news.errors[:body].each do |e|
+            .label.label-danger{ :style=>"margin-left:2px" }
+              =e
+        = f.cktext_area :body, rows: 10, cols: 500
+    %p
+      = f.submit "Create", class: "btn btn-primary btn_create"
+      = link_to 'Back', 'javascript:history.back()',  class: "btn btn-primary"
+- else
+  = form_for :news, url: admin_news_path, method: :patch do |f|
+    %div.form-group
+      %p
+        = f.label :title
+        - if @news.errors[:title].any?
+          - @news.errors[:title].each do |e|
+            .label.label-danger{ :style=>"margin-left:2px" }
+              =e
+        = f.text_field :title, :class => "form-control", :style=>"position: relative"
+    %div.form-group
+      %p
+        = f.label :body
+        - if @news.errors[:body].any?
+          - @news.errors[:body].each do |e|
+            .label.label-danger{ :style=>"margin-left:2px" }
+              =e
+        = f.cktext_area :body, rows: 10, cols: 50
+    %p
+      = f.submit "Save", class: "btn btn-primary btn_save"
+      = link_to 'Back', 'javascript:history.back()',  class: "btn btn-primary"

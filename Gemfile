@@ -17,6 +17,9 @@ gem 'will_paginate', '~> 3.0.7'
 gem 'will_paginate-bootstrap', '~> 1.0.1'
 gem "paperclip", "~> 4.2"
 gem 'agent_orange', '~> 0.1.6'
+gem 'ckeditor'
+gem 'responders', '~> 2.0'
+gem 'rmagick', '2.13.4'
 
 group :development, :test do
   gem 'byebug'
